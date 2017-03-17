@@ -1,0 +1,109 @@
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+.social-navigation a {
+	background: #979797;
+	border-radius: 999px;
+	color: #181818;
+	display: inline-block;
+	font-size: 1.375em;
+	height: 30px;
+	margin-right: 10px;
+	position: relative;
+	text-align: center;
+	transition: all 0.3s ease-in 0s;
+	width: 30px;
+}
+.social-navigation a .fa {
+	position: absolute;
+}
+
+.social-navigation a .fa-linkedin-square {
+	left: 7px;
+	top: 6px;
+}
+
+.social-navigation a .fa-twitter {
+	left: 7px;
+	top: 6px;
+}
+
+.social-navigation a .fa-google {
+	left: 7px;
+	top: 6px;
+}
+.social-navigation a:last-child {
+	margin-right: 0px;
+}
+#singlebutton{
+	color: #efefef;
+    background-color: #222222;
+    border-color: #222222;
+}
+#singlebutton:HOVER{
+	color: #efefef;
+    background-color: #222222;
+    border-color: #222222;
+}
+/* .social-navigation a:hover {
+	background: #fff;
+	color: #181818;
+} */
+.filter {
+	background-color: #efefef;
+}
+
+.filter-inner {
+	margin-top: 15px;
+}
