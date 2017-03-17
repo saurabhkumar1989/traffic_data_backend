@@ -28,8 +28,12 @@ def index(request):
 	return render(request, 'trafficdata/traffic_data_frontend/index.html', context)
 	
 
-def detail(request,tweet_id):
-	data = []
-	pass
+def detail(request,id):
+	print(id)
+	data = Tweets.objects.get(tweet_id = id)
+	context = {
+		'data': data,
+	}
+	return render(request, 'trafficdata/traffic_data_frontend/detail.html', context)
 def about(request):
 	pass
