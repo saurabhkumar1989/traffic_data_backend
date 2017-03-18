@@ -41,6 +41,7 @@ def detail(request,id):
 	}
 	return render(request, 'trafficdata/traffic_data_frontend/detail.html', context)
 def search(request):
+	city_list = City.objects.all()
 	users_list = User.objects.all()
 	if request.method == "GET":
 		userQuery = request.GET.get('userQuery')# text input from the search bar
@@ -50,6 +51,7 @@ def search(request):
 		context = {
 		'data': data,
 		'users_list': users_list,
+		'city_list':city_list,
 		}
 	return render(request, 'trafficdata/traffic_data_frontend/index.html',context)
 
