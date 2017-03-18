@@ -11,7 +11,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 PAGE_SIZE = 10
 
 def index(request):
-	city_list = City.objects.all()
+	city_list = Tweets.objects.order_by().values_list('location',flat=True).distinct()# get all the distinct city value
 	users_list = User.objects.all()
 	data_list = Tweets.objects.all().order_by('-tweet_date')
 	paginator = Paginator(data_list,PAGE_SIZE)
@@ -24,7 +24,6 @@ def index(request):
 	except EmptyPage:
        # If page is out of range (e.g. 9999), deliver last page of results.
 		data = paginator.page(paginator.num_pages)
-	#print(users)
 	context = {
 		'data': data,
 		'users_list': users_list,
@@ -34,14 +33,13 @@ def index(request):
 	
 
 def detail(request,id):
-	print(id)
 	data = Tweets.objects.get(tweet_id = id)
 	context = {
 		'data': data,
 	}
 	return render(request, 'trafficdata/traffic_data_frontend/detail.html', context)
 def search(request):
-	city_list = City.objects.all()
+	city_list = Tweets.objects.order_by().values_list('location',flat=True).distinct()
 	users_list = User.objects.all()
 	if request.method == "GET":
 		userQuery = request.GET.get('userQuery')# text input from the search bar
