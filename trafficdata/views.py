@@ -44,9 +44,19 @@ def search(request):
 	if request.method == "GET":
 		userQuery = request.GET.get('userQuery')# text input from the search bar
 		userOption = request.GET.get('user')# user option from the user drop down
-		user_id = User.objects.get(screen_name = userOption)
-		data = Tweets.objects.filter(user_id = user_id )
-		context = {
+		cityOption = request.GET.get('city')# option from city drop down
+		print(cityOption)
+		if userOption!=None and cityOption!=None:#both field insert
+			user_id = User.objects.get(screen_name = userOption)
+			data = Tweets.objects.filter(user_id = user_id ).filter(location=cityOption)
+		elif userOption== None and cityOption!=None:
+			data = Tweets.objects.filter().filter(location=cityOption)
+		elif userOption!= None and cityOption==None:
+			user_id = User.objects.get(screen_name = userOption)
+			data = Tweets.objects.filter(user_id = user_id )
+		else: #both blank
+			data = Tweets.objects.all().order_by('-tweet_date')
+	context = {
 		'data': data,
 		'users_list': users_list,
 		'city_list':city_list,
