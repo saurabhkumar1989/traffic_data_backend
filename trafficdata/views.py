@@ -37,7 +37,7 @@ def detail(request,id):
 	context = {
 		'data': data,
 	}
-	return render(request, 'trafficdata/traffic_data_frontend/detail.html', context)
+	return render(request, 'trafficdata/detail.html', context)
 def search(request):
 	city_list = Tweets.objects.order_by().values_list('location',flat=True).distinct()
 	users_list = User.objects.all()
@@ -61,7 +61,7 @@ def search(request):
 		'users_list': users_list,
 		'city_list':city_list,
 		}
-	return render(request, 'trafficdata/traffic_data_frontend/index.html',context)
+	return render(request, 'trafficdata/index.html',context)
 
 def about(request):
 	pass
