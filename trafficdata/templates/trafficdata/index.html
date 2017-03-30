@@ -130,10 +130,10 @@
 									{% for data_ in data %}
 									<tr>
 										<td>{{forloop.counter}}</td>
-										<td><a href="/trafficdata/{{ data_.tweet_id }}/">{{data_.tweet_text}}</a></td><!-- will go to detail page i.e by which user this was posted -->
+										<td><a data-toggle="tooltip" data-placement="top" title="Click here to get the detail information" href="/trafficdata/{{ data_.tweet_id }}/">{{data_.tweet_text}}</a></td><!-- will go to detail page i.e by which user this was posted -->
 										<td>{{data_.traffic_info}}</td>
 										<td>{{data_.location}}</td>
-										<td><a href="https://twitter.com/{{ data_.user_id.screen_name }}/">{{data_.user_id.screen_name}}</a></td><!-- No need to apply joins here -->
+										<td ><a data-toggle="tooltip" data-placement="top" title="Click here to visit user Twitter timeline" href="https://twitter.com/{{ data_.user_id.screen_name }}/">{{data_.user_id.screen_name}}</a></td><!-- No need to apply joins here -->
 										<td>{{data_.tweet_date}}</td>
 									</tr>
 									{% endfor %}
@@ -177,6 +177,8 @@
 	<!-- Bootstrap Core JavaScript -->
 	<script src="{% static 'trafficdata/js/bootstrap.min.js' %}"></script>
 
+	<!-- custom js file -->
+	<script src="{% static 'trafficdata/js/trafficdata.js' %}"></script>
 </body>
 
 </html>

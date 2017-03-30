@@ -1,0 +1,1 @@
+ $('a').tooltip();// activate tooltip
