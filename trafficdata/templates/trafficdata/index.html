@@ -109,7 +109,7 @@
 	<div class="container">
 
 		<div class="row">
-
+			<!-- main information -->
 			<div class="col-md-12">
 				<div class="row carousel-holder">
 
@@ -148,6 +148,30 @@
 
 			</div>
 
+		</div>
+	</div>
+	<div class='container' id='paginator'>
+		<!-- paginator -->
+		<div class='row'>
+			<div class='col-md-3 col-md-offset-5 col-lg-3 col-lg-offset-5 col-sm-5 col-sm-offset-4 col-xs-5 col-xs-offset-4'>
+				<nav aria-label="Page navigation">
+					<ul class="pagination">
+						{% if data.has_previous %}
+						<li><a href="?page={{ data.previous_page_number }}" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>   
+						</a></li>
+						{% else %}
+						<li class="disabled"><a aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+						{% endif %}
+						<li class="disabled"><a>Page {{ data.number }} of {{ data.paginator.num_pages }}.</a></li>
+					
+						{% if data.has_next %}<li><a href="?page={{ data.next_page_number }}" aria-label="Next"> <span
+								aria-hidden="true">&raquo;</span>
+						</a></li>
+						{% else %}<li class="disabled"><a aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
+						{% endif %}
+					</ul>
+				</nav>
+			</div>
 		</div>
 
 	</div>
