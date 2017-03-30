@@ -1,1 +1,1 @@
- $('a').tooltip();// activate tooltip
+$('a').tooltip();
