@@ -26,6 +26,10 @@ class User(models.Model):
 	followers_count = models.IntegerField(null=True)
 	friends_count = models.IntegerField(null=True)
 	time_zone = models.CharField(max_length = 100,null=True)
+
+	def __str__(self):
+		return self.screen_name
+
 class Query(models.Model):
 	query = models.ForeignKey(
 		'QueryType'
@@ -36,7 +40,8 @@ class Query(models.Model):
 	key_word = models.ForeignKey(
 		'KeyWords'
 		)
-
+	def __str__(self):
+		return self.query.query_type
 class City(models.Model):
 	#city_id =  models.AutoField(primary_key=True) not require, django will autoatically do that 
 	location = models.CharField(max_length=50,null=False)# city longitatude and latitude with radius
@@ -46,6 +51,12 @@ class QueryType(models.Model):
 	#query_id = models.IntegerField(primary_key=True)#not require, django will autoatically do that 
 	query_type = models.CharField(max_length=30)## only two type for now - 1 User time line and 2 Key word + location based
 
+	def __str__(self):
+		return self.query_type
+
 class KeyWords(models.Model):
 	#key_word_id = models.AutoField(primary_key=True)#not require, django will autoatically do that 
 	key_word = models.CharField(max_length=20)# key word for the city like rain,traffic water and so on
+
+	def __str__():
+		return self.key_word
