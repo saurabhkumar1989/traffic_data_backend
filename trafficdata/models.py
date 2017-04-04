@@ -15,6 +15,10 @@ class Tweets(models.Model):
 	tweet_date = models.DateTimeField(auto_now_add=True,null=True)
 	traffic_info = models.CharField(max_length=10,null=True)#  classifier output
 	location = models.CharField(max_length=100,null=True)
+
+	def __str__(self):
+		return self.tweet_text
+
 class User(models.Model):
 	#user_id= models.AutoField(primary_key=True) not require, django will autoatically do that 
 	user_Twitter_id = models.CharField(max_length = 50,null=True)
