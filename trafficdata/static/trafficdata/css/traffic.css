@@ -86,16 +86,35 @@ footer {
 .social-navigation a:last-child {
 	margin-right: 0px;
 }
-#singlebutton{
-	color: #efefef;
+.traffic-button{
+  color: #efefef;
     background-color: #222222;
     border-color: #222222;
+}
+.margin20{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+#singlebutton{
     width: 100%;
 }
-#singlebutton:HOVER{
+.traffic-button:HOVER{
 	color: #efefef;
     background-color: #222222;
     border-color: #222222;
+}
+.traffic-button:ACTIVE{
+  color: #efefef !important;
+    background-color: #222222 !important;
+    border-color: #222222 !important;
+}
+.traffic-button:FOCUS{
+  color: #efefef !important;
+    background-color: #222222 !important;
+    border-color: #222222 !important;
+}
+#toggleView{
+    float: right;;
 }
 /* .social-navigation a:hover {
 	background: #fff;

@@ -57,6 +57,7 @@
 			<div class='row'>
 				<div class='filter-inner clearfix'>
 					<div class='col-md-12'>
+						<!-- filter form -->
 						<form class="form-horizontal" action="/search-result">
 						<!-- 	{% csrf_token %} -->
 							<fieldset>
@@ -95,24 +96,32 @@
 										<!-- Button -->
 									<!-- <label class="col-md-4 control-label" for="singlebutton">Single	Button</label> -->
 									<div class="col-md-4">
-										<button id="singlebutton" name="singlebutton" class="btn btn-primary">Search</button>
+										<button id="singlebutton" name="search" class="btn btn-primary traffic-button">Search</button>
 									</div>
 								</div>
 							</fieldset>
 						</form>
-
+						<!-- form ends -->	
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div class='margin20'></div>
+	<!-- container for map or table  button -->
+	<div class='container'>
+		<div class='row'>
+			<div class="col-md-12 clearfix">
+				<button id="toggleView" name="map or list view" class="btn btn-primary traffic-button">Map View</button>
+			</div>
+		</div>
+	</div>
+	<div class='margin20'></div>
 	<div class="container">
-
 		<div class="row">
 			<!-- main information -->
 			<div class="col-md-12">
 				<div class="row carousel-holder">
-
 					<div class="col-md-12">
 						<table class="table table-hover">
 							<thead>
@@ -140,14 +149,9 @@
 								{% endif %}
 							</tbody>
 						</table>
-
 					</div>
-
 				</div>
-
-
 			</div>
-
 		</div>
 	</div>
 	<div class='container' id='paginator'>
