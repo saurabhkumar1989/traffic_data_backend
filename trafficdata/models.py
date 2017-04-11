@@ -20,7 +20,7 @@ class Tweets(models.Model):
 		return self.tweet_text
 
 class User(models.Model):
-	#user_id= models.AutoField(primary_key=True) not require, django will autoatically do that 
+	user_id= models.BigIntegerField(primary_key=True) #not require, django will autoatically do that 
 	user_Twitter_id = models.CharField(max_length = 50,null=True)
 	screen_name = models.CharField(max_length = 50,null=True)
 	followers_count = models.IntegerField(null=True)
@@ -40,6 +40,8 @@ class Query(models.Model):
 	key_word = models.ForeignKey(
 		'KeyWords'
 		)
+	class Meta:
+		unique_together = ("query", "city","key_word",)
 	def __str__(self):
 		return self.query.query_type
 class City(models.Model):
