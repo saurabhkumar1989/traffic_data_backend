@@ -6,16 +6,16 @@ import tweepy
 tweet_id = 0
 # DB Configuration
 config = {
-  'user': 'saukumar',
-  'password': 'rmtdl0680036',
-  'host': 'saukumar.cqjtz8mbwexb.us-west-2.rds.amazonaws.com',
-  'database': 'mysite',
+  'user': 'XXX',
+  'password': 'XXX',
+  'host': 'XX.XX-westXXX2.rds.XXX.com',
+  'database': 'xXX',
   'raise_on_warnings': True,
 }
-consumer_key = "Hol90i780joDoqDzWS32tR2cn"
-consumer_secret = "wIPsoeGyHbqfmHNcCdATs8GOlPOx9HeU5OlekcGm6D2TtHyUPk"
-access_token = "249152008-zYoxFHAVeDzlWNasuaqxOXBOZpihHCYxi0frmChO"
-access_token_secret = "qBTozbbXA10mdI57sEhOoiYrIE18E2GHg8qCwKnkjNZYl"
+consumer_key = "XXXX"
+consumer_secret = "XXXX"
+access_token = "XXX-XXXXX"
+access_token_secret = "XXXX"
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
