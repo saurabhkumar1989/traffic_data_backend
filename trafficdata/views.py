@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from imp import load_source
 # Create your views here.
 from pymongo import MongoClient#mongo db client
 from django.shortcuts import get_object_or_404, render
@@ -8,8 +8,10 @@ from django.http import HttpResponse
 from .models import Tweets,User,City
 from django.template import loader
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+#from ..dataExtractor.files.configurationFile import Configurations
+
 PAGE_SIZE = 10
-MONGO_URI = 'mongodb://saukumar:1234@ds135680.mlab.com:35680/test_df'
+MONGO_URI = 'mongodb://saukumar:1234@ds062059.mlab.com:62059/test_df'
 client = MongoClient(MONGO_URI)
 db = client.test_df# test_df --> database name
 def index(request):
@@ -50,20 +52,20 @@ def search(request):
 		# user option from the user drop down
 		cityOption = request.GET.get('city')
 		# option from city drop down
-		print(cityOption)
+		userQuery = userQuery.strip().lower()
 
 		#for text filter
 		if userOption and cityOption and userQuery:#both field insert[111]
 			_ids = getMongoId(userQuery)
 			user_id = User.objects.get(screen_name = userOption)
 			if _ids==None:#if user ids is none then __in flter can't be used
-				data = Tweets.objects.filter(user_id = user_id ).filter(location=cityOption).filter(tweet_id=_ids)
+				data = Tweets.objects.filter(user_id = user_id ).filter(location=cityOption)
 			else:
 				data = Tweets.objects.filter(user_id = user_id ).filter(location=cityOption).filter(tweet_id__in=_ids)
 		elif userOption== None and cityOption ==None and userQuery:#[001]
 			_ids = getMongoId(userQuery)
 			if _ids==None:
-				data = Tweets.objects.filter(tweet_id=_ids)
+				data = Tweets.objects.all()
 			else:
 				data = Tweets.objects.filter(tweet_id__in=_ids)
 		elif userOption== None and cityOption and userQuery==None:
@@ -71,24 +73,25 @@ def search(request):
 		elif userOption==None and cityOption and userQuery:
 			_ids = getMongoId(userQuery)
 			if _ids==None:
-				data = Tweets.objects.filter(location=cityOption).filter(tweet_id=_ids)
+				data = Tweets.objects.filter(location=cityOption)
 			else:
 				data = Tweets.objects.filter(location=cityOption).filter(tweet_id__in=_ids)
 		elif userOption and cityOption==None and userQuery==None:
+			print("here i ma")
 			user_id = User.objects.get(screen_name = userOption)
 			data = Tweets.objects.filter(user_id = user_id )
 		elif userOption and cityOption==None and userQuery:
 			_ids = getMongoId(userQuery)
 			user_id = User.objects.get(screen_name = userOption)
 			if _ids:
-				data = Tweets.objects.filter(user_id = user_id ).filter(tweet_id=_ids)
+				data = Tweets.objects.filter(user_id__screen_name = user_id ).filter(tweet_id__in=_ids)
 			else:
-				data = Tweets.objects.filter(user_id = user_id ).filter(tweet_id__in=_ids)
+				data = Tweets.objects.filter(user_id = user_id )
 		elif userOption and cityOption and userQuery==None:
 			user_id = User.objects.get(screen_name = userOption)
 			data = Tweets.objects.filter(user_id = user_id ).filter(location=cityOption)
 		else: #everything blank
-			data = Tweets.objects.all().order_by('-tweet_date')
+			data = Tweets.objects.all().order_by('tweet_date')
 	context = {
 		'data': data,
 		'users_list': users_list,

@@ -20,7 +20,7 @@ class Tweets(models.Model):
 		return self.tweet_text
 
 class User(models.Model):
-	user_id= models.BigIntegerField(primary_key=True) #not require, django will autoatically do that 
+	user_id= models.BigIntegerField(primary_key=True)
 	user_Twitter_id = models.CharField(max_length = 50,null=True)
 	screen_name = models.CharField(max_length = 50,null=True)
 	followers_count = models.IntegerField(null=True)

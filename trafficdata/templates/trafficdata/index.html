@@ -25,6 +25,12 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
 
 </head>
 
@@ -121,7 +127,7 @@
 		<div class="row">
 			<!-- main information -->
 			<div class="col-md-12">
-				<div class="row carousel-holder">
+				<div class="row carousel-holder" id='list-view'>
 					<div class="col-md-12">
 						<table class="table table-hover">
 							<thead>
@@ -151,6 +157,7 @@
 						</table>
 					</div>
 				</div>
+				<div class='clearfix'id='map'></div>
 			</div>
 		</div>
 	</div>
@@ -207,6 +214,22 @@
 
 	<!-- custom js file -->
 	<script src="{% static 'trafficdata/js/trafficdata.js' %}"></script>
+	<script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlKdF-Y0Ik7DZGSshPi1RSHu4jTHnQnkw&callback=initMap">
+    </script>
 </body>
 
 </html>
