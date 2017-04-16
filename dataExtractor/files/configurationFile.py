@@ -2,9 +2,9 @@
 
 class Configurations:
     #db configuration
-    userName = 'saukumar'#user name for database
-    password = 'rmtdl0680036'
-    hostIP ='saukumar.cqjtz8mbwexb.us-west-2.rds.amazonaws.com'
+    userName = 'sXXXr'#user name for database
+    password = 'XXXXXXX36'
+    hostIP ='sXXXXXXXXamazonaws.com'
     databaseName = 'trafficdata'
     raise_on_warnings = True
 
@@ -21,10 +21,10 @@ class Configurations:
 
 
     #twitter api configuration
-    consumer_key = "Hol90i780joDoqDzWS32tR2cn"
-    consumer_secret = "wIPsoeGyHbqfmHNcCdATs8GOlPOx9HeU5OlekcGm6D2TtHyUPk"
-    access_token = "249152008-zYoxFHAVeDzlWNasuaqxOXBOZpihHCYxi0frmChO"
-    access_token_secret = "qBTozbbXA10mdI57sEhOoiYrIE18E2GHg8qCwKnkjNZYl"
+    consumer_key = "HXXXXXXXXXXXXcn"
+    consumer_secret = "wIPsXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXm6D2TtHyUPk"
+    access_token = "24915XXXXXXXXXXXXXXXXXXXXXXrmChO"
+    access_token_secret = "qBTozbXXXXXXXXXXXXXXXXXXXXXXXXXXXxjNZYl"
     
     twitter_config = {
                    'consumer_key' : consumer_key,
@@ -38,7 +38,7 @@ class Configurations:
         return self.twitter_config
     def mongoDBConfig(self):
         # return twitter api configuration
-        return 'mongodb://saukumar:1234@ds062059.mlab.com:62059/test_df'
+        return 'mongodb://XXXXXXX:XXXXXX@XXXXX.mlab.com:XXXXXXX/test_df'
 
 if __name__ == "__main__":
     config = Configurations()
