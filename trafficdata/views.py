@@ -11,7 +11,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 #from ..dataExtractor.files.configurationFile import Configurations
 
 PAGE_SIZE = 10
-MONGO_URI = 'mongodb://saukumar:1234@ds062059.mlab.com:62059/test_df'
+MONGO_URI = 'mongodb://XXX:XXXX@dsXXXX.mlab.com:XXX/XXXX'
 client = MongoClient(MONGO_URI)
 db = client.test_df# test_df --> database name
 def index(request):
