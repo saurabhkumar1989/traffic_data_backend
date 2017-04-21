@@ -87,36 +87,4 @@ def saveTweets(query_type,twitter_id,numbr_of_tweets):
     	print"No relevant tweeter feed"
 
 if __name__ == "__main__":
-        consumer_key = "Hol90i780joDoqDzWS32tR2cn"
-        consumer_secret = "wIPsoeGyHbqfmHNcCdATs8GOlPOx9HeU5OlekcGm6D2TtHyUPk"
-        access_token = "249152008-zYoxFHAVeDzlWNasuaqxOXBOZpihHCYxi0frmChO"
-        access_token_secret = "qBTozbbXA10mdI57sEhOoiYrIE18E2GHg8qCwKnkjNZYl"
-        auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-        auth.set_access_token(access_token, access_token_secret)
-        
-        api = tweepy.API(auth)
-        
-        #public_tweets = api.home_timeline()
-        #for tweet in public_tweets:
-        #    print tweet.text
-        b = []
-        d = []
-        
-        
-        
-        chicago = "41.881832,-87.627760,30km"
-        chennai = "13.083162,80.282758,30km"
-        New_york = "40.714264,-73.978499,30km"
-        london = "51.505234,-0.111244,30km"
-        newdelhi = "28.612952,77.211953,30km"
-        indianapolis = "39.767927,-86.158749,30km"
-        bombay ="19.110914,72.885140,30km"
-        new_jersey = "40.279865,-74.517549,30km"
-        words = ['#traffic','traffic','road','road accidents','accidents','congestion','construction']
-        a = api.search(q='construction', geocode=chicago)
-        for tweet in a:
-            tweet_data = tweetData(query_type,twitter_id,tweet)
-            cursor.execute(saveTweetsQery(), tweet_data)
-            b.append(tweet.text)
-            saveTweets
-            
+        pass
