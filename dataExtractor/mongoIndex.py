@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr 08 21:03:32 2017
-
-@author: Ramanuja
-"""
 from files.configurationFile import Configurations
 from files.status import status
 from pymongo import MongoClient
