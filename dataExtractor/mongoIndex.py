@@ -14,10 +14,7 @@ def mongoSearchIndex(Configurations):
     
     data = getAllTweets(Configurations)
     # to check whether connected to the database
-    #print(client.server_info())
     db = client.test_df# test_df --> database name
-    #==========table name is = 'searchIndex' =======
-    #db.searchIndex.insert({'_id':'test_2u2ser1'})# search index is collection (table)
     count = 1
     for record in data:
         count = count + 1
