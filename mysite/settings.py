@@ -85,8 +85,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'trafficdata',
         'USER': 'saukumar',
-        'PASSWORD':'rmtdl0680036',
-        'HOST':'saukumar.cqjtz8mbwexb.us-west-2.rds.amazonaws.com'   
+        'PASSWORD':'XXXXX',
+        'HOST':'sXXXXst-2.rds.amazonaws.com'   
     }
 }
 
